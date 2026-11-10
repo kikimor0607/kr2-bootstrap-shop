@@ -1,8 +1,5 @@
-/* =========================================================
-   custom.css — точечная настройка проекта поверх Bootstrap.
-   Подключается ПОСЛЕ bootstrap.min.css, поэтому может
-   переопределять его стили. Bootstrap здесь не дублируется.
-   ========================================================= */
+/* custom.css: свои стили поверх Bootstrap.
+   Подключается после bootstrap.min.css, чтобы можно было переопределять его стили. */
 
 /* 1. Фирменные цвета проекта */
 :root {
@@ -12,7 +9,7 @@
   --brand-accent: #e3c9a8;
   --brand-cream: #fbf7f2;
 
-  /* Цвет ссылок и фокуса Bootstrap — в тон проекта */
+  /* цвет ссылок и фокуса Bootstrap в тон проекта */
   --bs-link-color: var(--brand-primary);
   --bs-link-color-rgb: 138, 75, 32;
   --bs-link-hover-color: var(--brand-primary-dark);
@@ -83,19 +80,7 @@ body {
     linear-gradient(135deg, var(--brand-coffee) 0%, #4a2e1c 100%);
 }
 
-/* 5. Преимущества */
-.advantage-card__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: var(--brand-accent);
-  font-size: 1.6rem;
-}
-
-/* 6. Карточки товаров: собственная модификация card */
+/* 5. Карточки товаров: собственная модификация card */
 .product-card {
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -122,7 +107,7 @@ body {
   opacity: 0.6;
 }
 
-/* 7. Каталог: фильтры прилипают при прокрутке на больших экранах */
+/* 6. Каталог: фильтры прилипают при прокрутке на больших экранах */
 @media (min-width: 992px) {
   .filters-card {
     position: sticky;
@@ -148,7 +133,7 @@ body {
   background-color: var(--brand-primary);
 }
 
-/* 8. Видимый фокус полей формы в фирменном цвете */
+/* 7. Видимый фокус полей формы в фирменном цвете */
 .form-control:focus,
 .form-select:focus,
 .form-check-input:focus {
@@ -156,7 +141,7 @@ body {
   box-shadow: 0 0 0 0.25rem rgba(138, 75, 32, 0.25);
 }
 
-/* 9. Вкладки и аккордеон */
+/* 8. Вкладки и аккордеон */
 .nav-tabs .nav-link {
   color: var(--brand-primary);
 }
@@ -172,7 +157,7 @@ body {
   --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(138, 75, 32, 0.25);
 }
 
-/* 10. Страница заказа и контакты */
+/* 9. Страница заказа и контакты */
 .progress-coffee {
   background-color: var(--brand-primary);
 }
@@ -191,12 +176,7 @@ body {
   background-size: 48px 48px;
 }
 
-/* 11. Карусель отзывов */
-#reviewsCarousel .carousel-indicators {
-  margin-bottom: 0;
-}
-
-/* 12. Уменьшение анимаций по настройке системы */
+/* 10. Уменьшение анимаций по настройке системы */
 @media (prefers-reduced-motion: reduce) {
   .product-card {
     transition: none;
