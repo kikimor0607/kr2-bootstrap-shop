@@ -20,7 +20,11 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li>
           <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link" href="order.html">Оформить заказ</a></li>
         </ul>
+        <div class="d-flex gap-2 mt-3 mt-lg-0">
+          <button class="btn btn-accent" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Быстрая заявка</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -37,8 +41,8 @@
               и отправляем его в течение двух дней после обжарки.
             </p>
             <div class="d-flex flex-wrap gap-3">
-              <a class="btn btn-accent btn-lg" href="#popular">Перейти в каталог</a>
-              <a class="btn btn-outline-light btn-lg" href="#advantages">Почему мы</a>
+              <a class="btn btn-accent btn-lg" href="catalog.html">Перейти в каталог</a>
+              <button class="btn btn-outline-light btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Быстрая заявка</button>
             </div>
           </div>
           <div class="col-12 col-lg-6">
@@ -89,6 +93,10 @@
             </div>
           </div>
         </div>
+        <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+          <strong>Скидка 10% на первый заказ</strong> по промокоду <span class="badge text-bg-dark">FIRST10</span>
+          <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Закрыть"></button>
+        </div>
       </div>
     </section>
 
@@ -96,7 +104,7 @@
       <div class="container">
         <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4">
           <h2 class="h3 mb-0" id="popular-title">Популярные сорта</h2>
-          <a class="link-primary fw-semibold" href="#popular">Весь каталог →</a>
+          <a class="link-primary fw-semibold" href="catalog.html">Весь каталог →</a>
         </div>
         <div class="row g-4">
           <div class="col-12 col-md-6 col-lg-4">
@@ -108,7 +116,10 @@
                 <h3 class="card-title h5">Эфиопия Иргачеффе</h3>
                 <p class="card-text text-body-secondary">Цветочный аромат, ноты бергамота и персика.</p>
                 <p class="mb-3"><span class="fs-5 fw-bold">890 ₽</span> <span class="small text-body-secondary">/ 250 г</span></p>
-                <a class="btn btn-primary mt-auto" href="#">Подробнее</a>
+                <div class="d-flex gap-2 mt-auto">
+                  <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
+                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                </div>
               </div>
             </article>
           </div>
@@ -121,7 +132,10 @@
                 <h3 class="card-title h5">Эспрессо-смесь «Утро»</h3>
                 <p class="card-text text-body-secondary">Плотное тело, шоколад и сухофрукты.</p>
                 <p class="mb-3"><span class="fs-5 fw-bold">690 ₽</span> <span class="small text-body-secondary">/ 250 г</span></p>
-                <a class="btn btn-primary mt-auto" href="#">Подробнее</a>
+                <div class="d-flex gap-2 mt-auto">
+                  <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
+                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                </div>
               </div>
             </article>
           </div>
@@ -134,7 +148,10 @@
                 <h3 class="card-title h5">Бразилия Сантос</h3>
                 <p class="card-text text-body-secondary">Мягкий вкус, какао и жареный орех.</p>
                 <p class="mb-3"><s class="text-body-secondary me-1">620 ₽</s> <span class="fs-5 fw-bold">520 ₽</span> <span class="small text-body-secondary">/ 250 г</span></p>
-                <a class="btn btn-primary mt-auto" href="#">Подробнее</a>
+                <div class="d-flex gap-2 mt-auto">
+                  <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
+                  <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                </div>
               </div>
             </article>
           </div>
@@ -155,6 +172,7 @@
           <ul class="list-unstyled d-grid gap-1">
             <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="index.html">Главная</a></li>
             <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="catalog.html">Каталог</a></li>
+            <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="order.html">Оформить заказ</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-4">
@@ -170,6 +188,75 @@
       <p class="small text-light text-opacity-75 mb-0">&copy; 2026 Зерно. Учебный проект КР №2 — Bootstrap.</p>
     </div>
   </footer>
+
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form class="needs-validation" action="#" method="post">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="orderModalLabel">Быстрая заявка</h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-body-secondary small">Оставьте контакты — менеджер перезвонит и уточнит детали заказа.</p>
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label" for="modal-name">Имя <span class="text-danger">*</span></label>
+                <input class="form-control" id="modal-name" name="name" type="text" placeholder="Иван" minlength="2" autocomplete="given-name" required>
+                <div class="invalid-feedback">Введите имя (минимум 2 символа).</div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="modal-phone">Телефон <span class="text-danger">*</span></label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text">+7</span>
+                  <input class="form-control" id="modal-phone" name="phone" type="tel" placeholder="999 123-45-67"
+                    pattern="[0-9\s\-]{10,13}" autocomplete="tel-national" required>
+                  <div class="invalid-feedback">Введите 10 цифр номера.</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="modal-email">E-mail <span class="text-danger">*</span></label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text">@</span>
+                  <input class="form-control" id="modal-email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required>
+                  <div class="invalid-feedback">Введите корректный e-mail.</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="modal-product">Товар <span class="text-danger">*</span></label>
+                <select class="form-select" id="modal-product" name="product" required>
+                  <option value="">Выберите товар</option>
+                  <option value="ethiopia">Эфиопия Иргачеффе</option>
+                  <option value="colombia">Колумбия Супремо</option>
+                  <option value="kenya">Кения АА</option>
+                  <option value="decaf">Колумбия Декаф</option>
+                  <option value="utro">Эспрессо-смесь «Утро»</option>
+                  <option value="brazil">Бразилия Сантос</option>
+                  <option value="v60">Воронка V60</option>
+                </select>
+                <div class="invalid-feedback">Выберите товар.</div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="modal-comment">Комментарий</label>
+                <textarea class="form-control" id="modal-comment" name="comment" rows="3" maxlength="500" placeholder="Например: позвоните перед доставкой"></textarea>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" id="modal-agree" name="agree" type="checkbox" required>
+                  <label class="form-check-label" for="modal-agree">Я согласен на обработку персональных данных</label>
+                  <div class="invalid-feedback">Нужно согласие на обработку данных.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Отмена</button>
+            <button class="btn btn-primary" type="submit">Отправить заявку</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
