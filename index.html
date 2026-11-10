@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Зерно — кофе свежей обжарки | Bootstrap</title>
+  <meta name="description" content="Интернет-магазин кофе свежей обжарки «Зерно», версия на Bootstrap: specialty-зерно, эспрессо-смеси, доставка.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-coffee sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><span class="brand-dot">●</span> Зерно</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero py-5">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-12 col-lg-6">
+            <span class="badge rounded-pill text-bg-light mb-3">Обжарочная specialty-кофе</span>
+            <h1 class="display-5 fw-bold text-white">Кофе свежей обжарки с доставкой</h1>
+            <p class="lead text-white text-opacity-75 my-4">
+              Обжариваем зерно небольшими партиями каждую неделю
+              и отправляем его в течение двух дней после обжарки.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a class="btn btn-accent btn-lg" href="#popular">Перейти в каталог</a>
+              <a class="btn btn-outline-light btn-lg" href="#advantages">Почему мы</a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <img class="img-fluid rounded-4 shadow-lg" src="images/hero.jpg" alt="Чашка кофе на блюдце с жареными зёрнами" width="960" height="720">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="advantages" aria-labelledby="advantages-title">
+      <div class="container">
+        <h2 class="h3 mb-4" id="advantages-title">Почему выбирают нас</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm advantage-card">
+              <div class="card-body">
+                <div class="advantage-card__icon mb-3" aria-hidden="true">🔥</div>
+                <h3 class="h5">Свежая обжарка</h3>
+                <p class="card-text text-body-secondary mb-0">Обжариваем каждую неделю и отправляем не позже чем через 7 дней.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm advantage-card">
+              <div class="card-body">
+                <div class="advantage-card__icon mb-3" aria-hidden="true">☕</div>
+                <h3 class="h5">Specialty-зерно</h3>
+                <p class="card-text text-body-secondary mb-0">Только кофе с оценкой от 80 баллов по шкале SCA.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm advantage-card">
+              <div class="card-body">
+                <div class="advantage-card__icon mb-3" aria-hidden="true">⚙️</div>
+                <h3 class="h5">Помол бесплатно</h3>
+                <p class="card-text text-body-secondary mb-0">Смелем под турку, фильтр, гейзер или эспрессо.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm advantage-card">
+              <div class="card-body">
+                <div class="advantage-card__icon mb-3" aria-hidden="true">🚚</div>
+                <h3 class="h5">Доставка от 1 дня</h3>
+                <p class="card-text text-body-secondary mb-0">Курьером по Москве и СДЭК по всей России.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-body-tertiary" id="popular" aria-labelledby="popular-title">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4">
+          <h2 class="h3 mb-0" id="popular-title">Популярные сорта</h2>
+          <a class="link-primary fw-semibold" href="#popular">Весь каталог →</a>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card h-100 product-card">
+              <span class="badge text-bg-danger position-absolute top-0 start-0 m-2">Хит</span>
+              <img class="card-img-top" src="images/products/ethiopia.jpg" alt="Эфиопия Иргачеффе" width="800" height="600" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <p class="small text-uppercase text-body-secondary mb-1">Моносорт · Под фильтр</p>
+                <h3 class="card-title h5">Эфиопия Иргачеффе</h3>
+                <p class="card-text text-body-secondary">Цветочный аромат, ноты бергамота и персика.</p>
+                <p class="mb-3"><span class="fs-5 fw-bold">890 ₽</span> <span class="small text-body-secondary">/ 250 г</span></p>
+                <a class="btn btn-primary mt-auto" href="#">Подробнее</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card h-100 product-card">
+              <span class="badge text-bg-danger position-absolute top-0 start-0 m-2">Хит</span>
+              <img class="card-img-top" src="images/products/utro.jpg" alt="Эспрессо-смесь «Утро»" width="800" height="600" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <p class="small text-uppercase text-body-secondary mb-1">Смесь · Под эспрессо</p>
+                <h3 class="card-title h5">Эспрессо-смесь «Утро»</h3>
+                <p class="card-text text-body-secondary">Плотное тело, шоколад и сухофрукты.</p>
+                <p class="mb-3"><span class="fs-5 fw-bold">690 ₽</span> <span class="small text-body-secondary">/ 250 г</span></p>
+                <a class="btn btn-primary mt-auto" href="#">Подробнее</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card h-100 product-card">
+              <span class="badge text-bg-success position-absolute top-0 start-0 m-2">−16%</span>
+              <img class="card-img-top" src="images/products/brazil.jpg" alt="Бразилия Сантос" width="800" height="600" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <p class="small text-uppercase text-body-secondary mb-1">Смесь · Под эспрессо</p>
+                <h3 class="card-title h5">Бразилия Сантос</h3>
+                <p class="card-text text-body-secondary">Мягкий вкус, какао и жареный орех.</p>
+                <p class="mb-3"><s class="text-body-secondary me-1">620 ₽</s> <span class="fs-5 fw-bold">520 ₽</span> <span class="small text-body-secondary">/ 250 г</span></p>
+                <a class="btn btn-primary mt-auto" href="#">Подробнее</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-coffee text-light pt-5 pb-4 mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-5">
+          <h2 class="h5">Зерно</h2>
+          <p class="text-light text-opacity-75 mb-0">Обжариваем specialty-кофе небольшими партиями с 2019 года.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="h6 text-uppercase">Разделы</h2>
+          <ul class="list-unstyled d-grid gap-1">
+            <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="index.html">Главная</a></li>
+            <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="catalog.html">Каталог</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h2 class="h6 text-uppercase">Контакты</h2>
+          <address class="mb-0 text-light text-opacity-75">
+            Москва, ул. Обжарочная, 7<br>
+            <a class="link-light" href="tel:+74950000000">+7 (495) 000-00-00</a><br>
+            <a class="link-light" href="mailto:hello@zerno.example">hello@zerno.example</a>
+          </address>
+        </div>
+      </div>
+      <hr class="border-light border-opacity-25 my-4">
+      <p class="small text-light text-opacity-75 mb-0">&copy; 2026 Зерно. Учебный проект КР №2 — Bootstrap.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
