@@ -21,9 +21,14 @@
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li>
           <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
           <li class="nav-item"><a class="nav-link" href="order.html">Оформить заказ</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
         </ul>
         <div class="d-flex gap-2 mt-3 mt-lg-0">
           <button class="btn btn-accent" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Быстрая заявка</button>
+          <a class="btn btn-outline-light position-relative" href="order.html" aria-label="Корзина, 2 товара">
+            Корзина
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+          </a>
         </div>
       </div>
     </div>
@@ -119,6 +124,7 @@
                 <div class="d-flex gap-2 mt-auto">
                   <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
                   <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                  <button class="btn btn-outline-secondary" type="button" data-cart-add aria-label="В корзину">+</button>
                 </div>
               </div>
             </article>
@@ -135,6 +141,7 @@
                 <div class="d-flex gap-2 mt-auto">
                   <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
                   <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                  <button class="btn btn-outline-secondary" type="button" data-cart-add aria-label="В корзину">+</button>
                 </div>
               </div>
             </article>
@@ -151,10 +158,52 @@
                 <div class="d-flex gap-2 mt-auto">
                   <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
                   <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                  <button class="btn btn-outline-secondary" type="button" data-cart-add aria-label="В корзину">+</button>
                 </div>
               </div>
             </article>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-body-tertiary" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <h2 class="h3 text-center mb-4" id="reviews-title">Отзывы покупателей</h2>
+        <div class="carousel slide carousel-dark" id="reviewsCarousel" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button class="active" type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" aria-current="true" aria-label="Отзыв 1"></button>
+            <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" aria-label="Отзыв 2"></button>
+            <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" aria-label="Отзыв 3"></button>
+          </div>
+          <div class="carousel-inner pb-4">
+            <div class="carousel-item active">
+              <blockquote class="blockquote text-center px-5 py-4 mb-0">
+                <p class="fs-4">«Иргачеффе — лучший кофе для V60, что я пробовала. Пришёл через день после обжарки.»</p>
+                <footer class="blockquote-footer mt-2">Анна, Москва</footer>
+              </blockquote>
+            </div>
+            <div class="carousel-item">
+              <blockquote class="blockquote text-center px-5 py-4 mb-0">
+                <p class="fs-4">«Беру смесь «Утро» для кофемашины уже полгода. Стабильно вкусно, без горечи.»</p>
+                <footer class="blockquote-footer mt-2">Игорь, Казань</footer>
+              </blockquote>
+            </div>
+            <div class="carousel-item">
+              <blockquote class="blockquote text-center px-5 py-4 mb-0">
+                <p class="fs-4">«Помогли подобрать помол под турку, ответили в чате за пару минут.»</p>
+                <footer class="blockquote-footer mt-2">Мария, Тверь</footer>
+              </blockquote>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+          </button>
         </div>
       </div>
     </section>
@@ -173,6 +222,7 @@
             <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="index.html">Главная</a></li>
             <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="catalog.html">Каталог</a></li>
             <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="order.html">Оформить заказ</a></li>
+            <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="contacts.html">Контакты</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-4">
@@ -192,7 +242,7 @@
   <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <form class="needs-validation" action="#" method="post">
+        <form class="needs-validation" action="#" method="post" novalidate>
           <div class="modal-header">
             <h2 class="modal-title fs-5" id="orderModalLabel">Быстрая заявка</h2>
             <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
@@ -248,6 +298,9 @@
                 </div>
               </div>
             </div>
+          <div class="alert alert-success d-none mt-3 mb-0" role="alert" data-form-success>
+            Заявка отправлена! Перезвоним в течение 30 минут.
+          </div>
           </div>
           <div class="modal-footer">
             <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Отмена</button>
@@ -258,6 +311,16 @@
     </div>
   </div>
 
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast align-items-center text-bg-dark border-0" id="cartToast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">Товар добавлен в корзину ☕</div>
+        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+    </div>
+  </div>
+
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

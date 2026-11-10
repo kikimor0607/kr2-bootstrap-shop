@@ -21,24 +21,88 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="catalog.html">Каталог</a></li>
           <li class="nav-item"><a class="nav-link" href="order.html">Оформить заказ</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
         </ul>
         <div class="d-flex gap-2 mt-3 mt-lg-0">
           <button class="btn btn-accent" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Быстрая заявка</button>
+          <a class="btn btn-outline-light position-relative" href="order.html" aria-label="Корзина, 2 товара">
+            Корзина
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+          </a>
         </div>
       </div>
     </div>
   </nav>
 
   <main class="container py-5">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Каталог</li>
+      </ol>
+    </nav>
     <h1 class="mb-3">Каталог кофе</h1>
     <div class="alert alert-info" role="alert">
       Обжариваем по понедельникам, средам и пятницам — кофе приедет не позже чем через 7 дней после обжарки.
     </div>
 
     <div class="row g-4">
-        <div class="col-12">
+        <div class="col-12 col-lg-3">
+          <button class="btn btn-outline-primary w-100 d-lg-none mb-3" type="button" data-bs-toggle="collapse"
+            data-bs-target="#filters" aria-expanded="false" aria-controls="filters">Показать фильтры</button>
+          <div class="collapse d-lg-block" id="filters">
+            <aside class="card shadow-sm filters-card" aria-label="Фильтры каталога">
+              <div class="card-body">
+                <h2 class="h5 mb-3">Фильтры</h2>
+                <div class="list-group list-group-flush mb-3">
+                  <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="#">Моносорта<span class="badge text-bg-light rounded-pill">5</span></a>
+                  <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="#">Эспрессо-смеси<span class="badge text-bg-light rounded-pill">2</span></a>
+                  <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="#">Аксессуары<span class="badge text-bg-light rounded-pill">1</span></a>
+                </div>
+                <form action="#">
+                  <h3 class="h6">Обжарка</h3>
+                  <div class="form-check">
+                    <input class="form-check-input" id="f-filter" type="checkbox" name="roast" value="filter" checked>
+                    <label class="form-check-label" for="f-filter">Под фильтр</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" id="f-espresso" type="checkbox" name="roast" value="espresso" checked>
+                    <label class="form-check-label" for="f-espresso">Под эспрессо</label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" id="f-universal" type="checkbox" name="roast" value="universal" checked>
+                    <label class="form-check-label" for="f-universal">Универсальная</label>
+                  </div>
+                  <label class="form-label h6" for="f-price">Цена до 1 500 ₽</label>
+                  <input class="form-range mb-3" id="f-price" type="range" name="price" min="500" max="1500" step="50" value="1500">
+                  <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" id="f-stock" type="checkbox" role="switch" name="in-stock">
+                    <label class="form-check-label" for="f-stock">Только в наличии</label>
+                  </div>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button">Применить</button>
+                    <button class="btn btn-outline-secondary" type="reset">Сбросить</button>
+                  </div>
+                </form>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-9">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+            <p class="text-body-secondary mb-0">Найдено товаров: <span class="badge text-bg-primary">8</span></p>
+            <div class="d-flex align-items-center gap-2">
+              <label class="text-nowrap" for="sort">Сортировка:</label>
+              <select class="form-select form-select-sm" id="sort" name="sort">
+                <option value="popular">По популярности</option>
+                <option value="price-asc">Сначала дешевле</option>
+                <option value="price-desc">Сначала дороже</option>
+              </select>
+            </div>
+          </div>
           <div class="row g-4">
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-xl-4">
               <article class="card h-100 product-card">
                 <span class="badge text-bg-danger position-absolute top-0 start-0 m-2">Хит</span>
                 <img class="card-img-top" src="images/products/ethiopia.jpg" alt="Эфиопия Иргачеффе" width="800" height="600" loading="lazy">
@@ -50,11 +114,12 @@
                   <div class="d-flex gap-2 mt-auto">
                     <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
                     <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                    <button class="btn btn-outline-secondary" type="button" data-cart-add aria-label="В корзину">+</button>
                   </div>
                 </div>
               </article>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-xl-4">
               <article class="card h-100 product-card">
                 <img class="card-img-top" src="images/products/colombia.jpg" alt="Колумбия Супремо" width="800" height="600" loading="lazy">
                 <div class="card-body d-flex flex-column">
@@ -65,11 +130,12 @@
                   <div class="d-flex gap-2 mt-auto">
                     <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
                     <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                    <button class="btn btn-outline-secondary" type="button" data-cart-add aria-label="В корзину">+</button>
                   </div>
                 </div>
               </article>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-xl-4">
               <article class="card h-100 product-card">
                 <span class="badge text-bg-primary position-absolute top-0 start-0 m-2">Новинка</span>
                 <img class="card-img-top" src="images/products/kenya.jpg" alt="Кения АА" width="800" height="600" loading="lazy">
@@ -81,11 +147,12 @@
                   <div class="d-flex gap-2 mt-auto">
                     <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
                     <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                    <button class="btn btn-outline-secondary" type="button" data-cart-add aria-label="В корзину">+</button>
                   </div>
                 </div>
               </article>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-xl-4">
               <article class="card h-100 product-card product-card--soldout">
                 <span class="badge text-bg-secondary position-absolute top-0 start-0 m-2">Нет в наличии</span>
                 <img class="card-img-top" src="images/products/guatemala.jpg" alt="Гватемала Антигуа" width="800" height="600" loading="lazy">
@@ -101,7 +168,7 @@
                 </div>
               </article>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-xl-4">
               <article class="card h-100 product-card">
                 <img class="card-img-top" src="images/products/decaf.jpg" alt="Колумбия Декаф" width="800" height="600" loading="lazy">
                 <div class="card-body d-flex flex-column">
@@ -112,11 +179,12 @@
                   <div class="d-flex gap-2 mt-auto">
                     <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
                     <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                    <button class="btn btn-outline-secondary" type="button" data-cart-add aria-label="В корзину">+</button>
                   </div>
                 </div>
               </article>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-xl-4">
               <article class="card h-100 product-card">
                 <span class="badge text-bg-danger position-absolute top-0 start-0 m-2">Хит</span>
                 <img class="card-img-top" src="images/products/utro.jpg" alt="Эспрессо-смесь «Утро»" width="800" height="600" loading="lazy">
@@ -128,11 +196,12 @@
                   <div class="d-flex gap-2 mt-auto">
                     <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
                     <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                    <button class="btn btn-outline-secondary" type="button" data-cart-add aria-label="В корзину">+</button>
                   </div>
                 </div>
               </article>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-xl-4">
               <article class="card h-100 product-card">
                 <span class="badge text-bg-success position-absolute top-0 start-0 m-2">−16%</span>
                 <img class="card-img-top" src="images/products/brazil.jpg" alt="Бразилия Сантос" width="800" height="600" loading="lazy">
@@ -144,11 +213,12 @@
                   <div class="d-flex gap-2 mt-auto">
                     <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
                     <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                    <button class="btn btn-outline-secondary" type="button" data-cart-add aria-label="В корзину">+</button>
                   </div>
                 </div>
               </article>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-xl-4">
               <article class="card h-100 product-card">
                 <img class="card-img-top" src="images/products/v60.jpg" alt="Воронка V60" width="800" height="600" loading="lazy">
                 <div class="card-body d-flex flex-column">
@@ -159,11 +229,22 @@
                   <div class="d-flex gap-2 mt-auto">
                     <a class="btn btn-outline-primary flex-fill" href="product.html">Подробнее</a>
                     <button class="btn btn-primary flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">Заказать</button>
+                    <button class="btn btn-outline-secondary" type="button" data-cart-add aria-label="В корзину">+</button>
                   </div>
                 </div>
               </article>
             </div>
           </div>
+
+          <nav class="mt-5" aria-label="Страницы каталога">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled"><span class="page-link">Назад</span></li>
+              <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Вперёд</a></li>
+            </ul>
+          </nav>
         </div>
     </div>
   </main>
@@ -181,6 +262,7 @@
             <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="index.html">Главная</a></li>
             <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="catalog.html">Каталог</a></li>
             <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="order.html">Оформить заказ</a></li>
+            <li><a class="link-light link-opacity-75 link-opacity-100-hover" href="contacts.html">Контакты</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-4">
@@ -200,7 +282,7 @@
   <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <form class="needs-validation" action="#" method="post">
+        <form class="needs-validation" action="#" method="post" novalidate>
           <div class="modal-header">
             <h2 class="modal-title fs-5" id="orderModalLabel">Быстрая заявка</h2>
             <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
@@ -256,6 +338,9 @@
                 </div>
               </div>
             </div>
+          <div class="alert alert-success d-none mt-3 mb-0" role="alert" data-form-success>
+            Заявка отправлена! Перезвоним в течение 30 минут.
+          </div>
           </div>
           <div class="modal-footer">
             <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Отмена</button>
@@ -266,6 +351,16 @@
     </div>
   </div>
 
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast align-items-center text-bg-dark border-0" id="cartToast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">Товар добавлен в корзину ☕</div>
+        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+    </div>
+  </div>
+
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
