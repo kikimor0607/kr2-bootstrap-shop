@@ -106,7 +106,9 @@ body {
   box-shadow: 0 0.75rem 1.5rem rgba(43, 29, 20, 0.15);
 }
 
-.product-card .card-img-top {
+.product-card .card-img-top,
+#productGallery .carousel-item img {
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
