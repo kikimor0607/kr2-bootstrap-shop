@@ -106,7 +106,9 @@ body {
   box-shadow: 0 0.75rem 1.5rem rgba(43, 29, 20, 0.15);
 }
 
-.product-card .card-img-top {
+.product-card .card-img-top,
+#productGallery .carousel-item img {
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
@@ -118,6 +120,32 @@ body {
 .product-card--soldout .card-img-top {
   filter: grayscale(1);
   opacity: 0.6;
+}
+
+/* 7. Каталог: фильтры прилипают при прокрутке на больших экранах */
+@media (min-width: 992px) {
+  .filters-card {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
+
+.pagination {
+  --bs-pagination-color: var(--brand-primary);
+  --bs-pagination-hover-color: var(--brand-primary-dark);
+  --bs-pagination-active-bg: var(--brand-primary);
+  --bs-pagination-active-border-color: var(--brand-primary);
+  --bs-pagination-focus-color: var(--brand-primary-dark);
+}
+
+.form-check-input:checked,
+.form-range::-webkit-slider-thumb {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+.form-range::-moz-range-thumb {
+  background-color: var(--brand-primary);
 }
 
 /* 8. Видимый фокус полей формы в фирменном цвете */
@@ -144,3 +172,37 @@ body {
   --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(138, 75, 32, 0.25);
 }
 
+/* 10. Страница заказа и контакты */
+.progress-coffee {
+  background-color: var(--brand-primary);
+}
+
+.order-summary {
+  position: sticky;
+  top: 5.5rem;
+}
+
+.map-placeholder {
+  min-height: 280px;
+  background-color: #f1e3d3;
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.7) 2px, transparent 2px),
+    linear-gradient(rgba(255, 255, 255, 0.7) 2px, transparent 2px);
+  background-size: 48px 48px;
+}
+
+/* 11. Карусель отзывов */
+#reviewsCarousel .carousel-indicators {
+  margin-bottom: 0;
+}
+
+/* 12. Уменьшение анимаций по настройке системы */
+@media (prefers-reduced-motion: reduce) {
+  .product-card {
+    transition: none;
+  }
+
+  .product-card:hover {
+    transform: none;
+  }
+}
